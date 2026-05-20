@@ -1,0 +1,241 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  transition: color 0.3s ease;
+}
+html, body {
+  width: 100%;
+  height: 100%;
+  background-color: #111111;
+  overflow-x:hidden;
+}
+
+.bar {
+    position: fixed;
+    width: 100%;
+    height: 5.5%;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    /* background-color: red; */
+    display: flex;
+    align-items:center;
+    justify-content: space-between;
+    font-family: "GT Pressura Regular";
+    color: #bfbfbf;
+    font-size: 13px;
+    opacity: 1;
+    letter-spacing: 3px;
+    font-weight: 100;
+    cursor: pointer;
+}
+.left-menu{
+    height: 100%;
+    width: 440px;
+    /* background-color: antiquewhite; */
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    gap: 170px;
+}
+.right-menu{
+    height: 100%;
+    width: 725px;
+    /* background-color: aquamarine; */
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    gap: 360px;
+}
+.hero-one{
+    height:100vh;
+    width: 100%;
+    /* background-color: red; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #e3e3e3;
+    font-family: 'Saira Extra Condensed', sans-serif;
+    font-weight: 900;
+    font-size: 115px;
+    line-height: 0.8;
+    text-align: center;
+}
+.circle{
+    width: 70px;
+    height: 70px;
+    background: #3866ff;
+
+    border-radius: 50%;
+
+    position: fixed;
+    z-index: 999;
+    bottom: 10px;
+    right: 10px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+}
+.circle img{
+    width:35px;
+    height:35px;
+    /* background-color: white; */
+    object-fit:contain;
+    /* border-radius: 50%; */
+}
+.menu-overlay{
+    position: fixed;
+
+    top: -100%;
+    left: 0;
+
+    width: 100%;
+    height: 100%;
+
+    background: #1C1C1C;
+
+    z-index: 999;
+
+    transition: all 2s ease;
+}
+.ball{
+    width:40px;
+    height:40px;
+
+    background:#4361ee;
+
+    border-radius:50%;
+
+    position:fixed;
+
+    pointer-events:none;
+
+    transform:translate(-50%, -50%);
+}
+.hero-two{
+    height:100vh;
+
+    /* background:#222; */
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    color:white;
+}
+.video-sec{
+    height:1000px;
+    width:1850px;
+
+    position:relative;
+
+    overflow:hidden;
+
+    border-radius:10px;
+
+    background:#000;
+}
+
+.video-sec iframe{
+    position:absolute;
+
+    top:50%;
+    left:50%;
+
+    width:110%;
+    height:110%;
+
+    transform:translate(-50%, -50%);
+
+    border:none;
+
+    pointer-events:none;
+
+    image-rendering:auto;
+}
+.hero-three{
+    height:100vh;
+    width: 100%;
+    /* background-color: red; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    color: #e3e3e3;
+}
+.hero-three p{
+    font-family: "GT Pressura Regular";
+    color: #bfbfbf;
+    font-size: 13px;
+    opacity: 1;
+    letter-spacing: 3px;
+    font-weight: 100;
+    text-transform: uppercase;
+}
+.hero-three h1{
+    color: #e3e3e3;
+    font-family: 'Saira Extra Condensed', sans-serif;
+    font-weight: 900;
+    font-size: 115px;
+    line-height: 0.8;
+    text-align: center;
+}
+.hero-four{
+    width: 100%;
+    height: 250vh;
+    /* background-color: red; */
+}
+.hero-four p{
+    font-family: "GT Pressura Regular";
+    color: #bfbfbf;
+    font-size: 13px;
+    opacity: 1;
+    letter-spacing: 3px;
+    font-weight: 100;
+    padding-left: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    right: 45%;
+}
+.hero-four h1{
+    color: #e3e3e3;
+    font-family: 'Saira Extra Condensed', sans-serif;
+    font-weight: 900;
+    font-size: 180px;
+    line-height: 0.8;
+    text-align: center;
+    position: relative;
+    top:10%;
+}
+.cover-box{
+    position: relative;
+    margin-top: 10%;
+    width: 100%;
+    top: 10%;
+    height: 180vh;
+    /* background-color: greenyellow; */
+    display: flex;
+    flex-wrap: wrap;
+    gap:20px;
+    justify-content: center;
+    align-items: center;
+}
+.boxes{
+    height:850px;
+    width:900px;
+    border-radius:10px;
+    overflow:hidden;
+    transition:0.4s ease;
+}
+
+.boxes img{
+    height:850px;
+    width:900px;
+    object-fit:cover;
+    border-radius:10px;
+    transition:0.4s ease;
+}

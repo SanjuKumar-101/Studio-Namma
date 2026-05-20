@@ -1,0 +1,72 @@
+let over_menu = document.querySelector(".menu-overlay");
+let hero = document.querySelector(".hero-one");
+let menu_p = document.querySelector(".menu-p");
+let flag = 1;
+
+menu_p.addEventListener("click",()=>{
+    if (flag){
+        over_menu.style.top = "0%";
+        menu_p.textContent = "CLOSE"
+        over_menu.style.transform = "rotate(12deg) translateY(20px)";
+        flag = 0;
+    }
+    else{
+        over_menu.style.top = "-300%";
+        menu_p.textContent = "MENU"
+        over_menu.style.transform = "rotate(0deg)";
+        flag = 1;
+    }
+});
+
+
+const ball = document.querySelector(".ball");
+
+let mouseX = 0;
+let mouseY = 0;
+
+let currentX = 0;
+let currentY = 0;
+
+document.addEventListener("mousemove", (e)=>{
+
+    mouseX = e.clientX;
+    mouseY = e.clientY;
+
+});
+
+function animate(){
+
+    currentX += (mouseX - currentX) * 0.08;
+    currentY += (mouseY - currentY) * 0.08;
+
+    ball.style.left = currentX + "px";
+    ball.style.top = currentY + "px";
+
+    requestAnimationFrame(animate);
+}
+
+animate();
+
+const boxes = document.querySelectorAll(".boxes");
+
+boxes.forEach((box)=>{
+
+    const image = box.querySelector("img");
+
+    box.addEventListener("mouseenter", ()=>{
+
+        image.style.filter = "blur(8px)";
+        box.style.height = "845px";
+        box.style.width = "895px";
+
+    });
+
+    box.addEventListener("mouseleave", ()=>{
+
+        image.style.filter = "blur(0px)";
+        box.style.height = "850px";
+        box.style.width = "900px";
+
+    });
+
+});
