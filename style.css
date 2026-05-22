@@ -239,3 +239,18 @@ html, body {
     border-radius:10px;
     transition:0.4s ease;
 }
+.home_intro_visuals{
+    display: none;
+}
+.intro-first {
+    color: #3866ff;
+}
+.intro-first:hover{
+    color: red;
+}
+.intro-second {
+    color: blue;
+}
+.intro-second:hover{
+    color: red;
+}
