@@ -7,13 +7,19 @@ menu_p.addEventListener("click",()=>{
     if (flag){
         over_menu.style.top = "0%";
         menu_p.textContent = "CLOSE"
-        over_menu.style.transform = "rotate(12deg) translateY(20px)";
+        // over_menu.style.width = "220%";
+        // over_menu.style.height = "205%";
+        over_menu.style.left = "-60%";
+        over_menu.style.transform = "rotate(90deg) translateY(20px)";
         flag = 0;
     }
     else{
-        over_menu.style.top = "-300%";
+        over_menu.style.top = "-205%";
         menu_p.textContent = "MENU"
+        over_menu.style.left = "0%";
         over_menu.style.transform = "rotate(0deg)";
+        over_menu.style.width = "220%";
+        over_menu.style.height = "205%";
         flag = 1;
     }
 });
