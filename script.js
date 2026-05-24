@@ -2,15 +2,19 @@ let over_menu = document.querySelector(".menu-overlay");
 let hero = document.querySelector(".hero-one");
 let menu_p = document.querySelector(".menu-p");
 let flag = 1;
+let textTimeout; // Variable to hold our animation timer
 
 menu_p.addEventListener("click",()=>{
     if (flag){
-        over_menu.style.top = "0%";
+        over_menu.style.top = "-57%";
         menu_p.textContent = "CLOSE"
         // over_menu.style.width = "220%";
         // over_menu.style.height = "205%";
         over_menu.style.left = "-60%";
-        over_menu.style.transform = "rotate(90deg) translateY(20px)";
+        over_menu.style.transform = "rotate(25deg) translateY(200px)";
+        textTimeout = setTimeout(() => {
+            over_menu.classList.add("text-animate");
+        }, 1500);
         flag = 0;
     }
     else{
@@ -20,10 +24,12 @@ menu_p.addEventListener("click",()=>{
         over_menu.style.transform = "rotate(0deg)";
         over_menu.style.width = "220%";
         over_menu.style.height = "205%";
+        clearTimeout(textTimeout);
+        over_menu.classList.remove("text-animate");
+
         flag = 1;
     }
 });
-
 
 const ball = document.querySelector(".ball");
 

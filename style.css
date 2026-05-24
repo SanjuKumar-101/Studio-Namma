@@ -112,21 +112,53 @@ body {
 }
 
 .menu-option-box-1 {
-    height: 800px;
-    width: 500px;
-    background-color: white;
-    left: 32%;
-    bottom: 5%;
+    height: 510px;
+    width: 800px;
+    /* background-color: white; */
+    left: 30%;
+    bottom: 34%;
     position: absolute;
+    transform: rotate(-25deg);
+    font-family: 'Saira Extra Condensed', sans-serif;
+    font-weight: 900;
+    font-size: 80px;
+    line-height: 0.8;
+    color: #e3e3e3;
 }
 .menu-option-box-2 {
-    height: 800px;
-    width: 500px;
-    background-color: white;
-    left: 32%;
-    bottom: 52%;
+    height: 500px;
+    width: 800px;
+    /* background-color: white; */
+    left: 50%;
+    bottom: 53.3%;
     position: absolute;
+    transform: rotate(-25deg);
+    font-family: 'Saira Extra Condensed', sans-serif;
+    font-weight: 900;
+    font-size: 80px;
+    line-height: 0.8;
+    color: #e3e3e3;
+    display: flex;
+    flex-direction: column;     
+    justify-content: flex-end;  
+    align-items: flex-start;
 }
+.h1-wrapper {
+    overflow: hidden;
+    display: block;
+}
+.menu-option-box-1 h1,
+.menu-option-box-2 h1 {
+    transform: translateY(105%); 
+    transition: transform 0.8s cubic-bezier(0.25, 1, 0.5, 1); /* Creates a smooth, elegant glide */
+}
+.menu-overlay.text-animate .h1-wrapper h1 {
+    transform: translateY(0%);
+}
+.h1-wrapper:nth-child(1) h1 { transition-delay: 0.0s; }
+.h1-wrapper:nth-child(2) h1 { transition-delay: 0.1s; }
+.h1-wrapper:nth-child(3) h1 { transition-delay: 0.2s; }
+.h1-wrapper:nth-child(4) h1 { transition-delay: 0.3s; }
 
 .ball {
     width: 40px;
