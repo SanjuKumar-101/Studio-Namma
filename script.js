@@ -2,7 +2,8 @@ let over_menu = document.querySelector(".menu-overlay");
 let hero = document.querySelector(".hero-one");
 let menu_p = document.querySelector(".menu-p");
 let flag = 1;
-let textTimeout; // Variable to hold our animation timer
+let textTimeout;
+const ball = document.querySelector(".ball");
 
 menu_p.addEventListener("click",()=>{
     if (flag){
@@ -30,8 +31,6 @@ menu_p.addEventListener("click",()=>{
         flag = 1;
     }
 });
-
-const ball = document.querySelector(".ball");
 
 let mouseX = 0;
 let mouseY = 0;
@@ -70,6 +69,15 @@ boxes.forEach((box)=>{
         image.style.filter = "blur(8px)";
         box.style.height = "845px";
         box.style.width = "895px";
+        ball.style.width = "125px";
+        ball.style.height = "50px";
+        ball.style.borderRadius = "10px";
+        ball.style.position = "fixed";
+        ball.style.transform = "rotate(-20deg)";
+        ball.style.color = "white";
+        if (box.getElementsByClassName == ".boxes b1") {
+             ball.style.textContent = "MATERA";
+        }
 
     });
 
@@ -78,8 +86,23 @@ boxes.forEach((box)=>{
         image.style.filter = "blur(0px)";
         box.style.height = "850px";
         box.style.width = "900px";
+        ball.style.width = "40px";
+        ball.style.height = "40px";
+        ball.style.borderRadius = "50%";
+        ball.style.transform = "translateX(0px)";
+        ball.style.color = "#4361ee";
 
     });
 
 });
 
+const b1 = document.querySelector(".b1");
+const b2 = document.querySelector(".b2");
+const b3 = document.querySelector(".b3");
+const b4 = document.querySelector(".b4");
+
+b1.forEach(element => {
+    element.addEventListener("mouseenter",()=>{
+        ball.style.textContent = "MATERA";
+    })
+});

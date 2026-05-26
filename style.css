@@ -150,7 +150,7 @@ body {
 .menu-option-box-1 h1,
 .menu-option-box-2 h1 {
     transform: translateY(105%); 
-    transition: transform 0.8s cubic-bezier(0.25, 1, 0.5, 1); /* Creates a smooth, elegant glide */
+    transition: transform 0.8s cubic-bezier(0.25, 1, 0.5, 1);
 }
 .menu-overlay.text-animate .h1-wrapper h1 {
     transform: translateY(0%);
@@ -169,10 +169,19 @@ body {
     border-radius: 50%;
 
     position: fixed;
+    z-index: 999;
 
     pointer-events: none;
 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
     transform: translate(-50%, -50%);
+    transition: all ease 0.1s;
+    overflow: hidden;
+    transform: translateY(105%);
+    color: #4361ee;
 }
 
 .hero-two {
