@@ -96,13 +96,23 @@ boxes.forEach((box)=>{
 
 });
 
-const b1 = document.querySelector(".b1");
-const b2 = document.querySelector(".b2");
-const b3 = document.querySelector(".b3");
-const b4 = document.querySelector(".b4");
+// const b1 = document.querySelector(".b1");
+// const b2 = document.querySelector(".b2");
+// const b3 = document.querySelector(".b3");
+// const b4 = document.querySelector(".b4");
 
-b1.forEach(element => {
-    element.addEventListener("mouseenter",()=>{
-        ball.style.textContent = "MATERA";
-    })
+// b1.forEach(element => {
+//     element.addEventListener("mouseenter",()=>{
+//         ball.style.textContent = "MATERA";
+//     })
+// });
+
+const buttons = document.querySelectorAll(".b1, .b2, .b3, .b4");
+
+const texts = ["MATERA", "CHANCE", "SILVR", "INTRAMUROS"];
+
+buttons.forEach((button, index) => {
+  button.addEventListener("mouseenter", () => {
+    ball.textContent = texts[index];
+  });
 });

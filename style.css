@@ -182,6 +182,11 @@ body {
     overflow: hidden;
     transform: translateY(105%);
     color: #4361ee;
+    font-family: 'Saira Extra Condensed', sans-serif;
+    font-weight: 900;
+    font-size: 30px;
+    line-height: 0.8;
+    text-align: center;
 }
 
 .hero-two {
@@ -337,4 +342,34 @@ body {
 
 .intro-second:hover {
     color: red;
+}
+
+.hero-five {
+    height: 150vh;
+    width: 100%;
+    /* background-color: red; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #e3e3e3;
+    font-family: 'Saira Extra Condensed', sans-serif;
+    font-weight: 800;
+    /* font-size: 8rem; */
+    line-height: 0.84;
+    text-align: center;
+    letter-spacing: -.3rem;
+    flex-direction: column;
+    gap: 10px;
+}
+.service-boxes {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 1000px;
+    height: 110px;
+    /* background-color: #1C1C1C; */
+    /* margin: 20px; */
+    font-stretch: expanded;
+    border-radius: 10px;
+    font-size: 4rem;
 }
