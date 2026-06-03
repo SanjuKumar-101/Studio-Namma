@@ -266,6 +266,9 @@ body {
     width: 100%;
     height: 250vh;
     /* background-color: red; */
+    /* display: flex;
+    justify-content: center;
+    align-items: center; */
 }
 
 .hero-four p {
@@ -309,15 +312,36 @@ body {
 }
 
 .boxes {
-    height: 850px;
+    height: 950px;
     width: 900px;
     border-radius: 10px;
     overflow: hidden;
     transition: 0.4s ease;
+    /* background-color: red; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.hover-boxes {
+    position: absolute;
+    z-index: 999;
+    height: 388px;
+    width: 690px;
+    background-color: blue;
+    border-radius: 10px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    visibility:hidden;
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 0.3s ease;
 }
 
 .boxes img {
-    height: 850px;
+    height: 950px;
     width: 900px;
     object-fit: cover;
     border-radius: 10px;

@@ -67,7 +67,7 @@ boxes.forEach((box)=>{
     box.addEventListener("mouseenter", ()=>{
 
         image.style.filter = "blur(8px)";
-        box.style.height = "845px";
+        box.style.height = "940px";
         box.style.width = "895px";
         ball.style.width = "125px";
         ball.style.height = "50px";
@@ -75,22 +75,22 @@ boxes.forEach((box)=>{
         ball.style.position = "fixed";
         ball.style.transform = "rotate(-20deg)";
         ball.style.color = "white";
-        if (box.getElementsByClassName == ".boxes b1") {
-             ball.style.textContent = "MATERA";
-        }
+        h_boxes.style.visibility = "visible";
+        // h_boxes.style.height = "500px";
 
     });
 
     box.addEventListener("mouseleave", ()=>{
 
         image.style.filter = "blur(0px)";
-        box.style.height = "850px";
+        box.style.height = "950px";
         box.style.width = "900px";
         ball.style.width = "40px";
         ball.style.height = "40px";
         ball.style.borderRadius = "50%";
         ball.style.transform = "translateX(0px)";
         ball.style.color = "#4361ee";
+        h_boxes.style.visibility = "hidden";
 
     });
 
@@ -111,8 +111,16 @@ const buttons = document.querySelectorAll(".b1, .b2, .b3, .b4");
 
 const texts = ["MATERA", "CHANCE", "SILVR", "INTRAMUROS"];
 
+const h_boxes = document.querySelectorAll(".hb1, .hb2, .hb3, .hb4");
+
 buttons.forEach((button, index) => {
   button.addEventListener("mouseenter", () => {
     ball.textContent = texts[index];
+    h_boxes[index].style.visibility = "visible";
+    h_boxes[index].style.opacity = "1"; // Optional: smooth fade in
   });
-});
+  button.addEventListener("mouseleave", () => {
+    h_boxes[index].style.visibility = "hidden";
+    h_boxes[index].style.opacity = "0";
+  });
+}); 
