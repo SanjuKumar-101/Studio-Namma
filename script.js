@@ -123,4 +123,40 @@ buttons.forEach((button, index) => {
     h_boxes[index].style.visibility = "hidden";
     h_boxes[index].style.opacity = "0";
   });
-}); 
+});
+
+// const s_boxes = document.querySelectorAll(".sb1, .sb2, .sb3, .sb4, .sb5, .sb6, .sb7");
+
+// s_boxes.forEach((s_box, index) => {
+//     s_box.addEventListener("mouseenter", () => {
+//         s_box.style.opacity = "0.3";
+//     })
+//     s_box.addEventListener("mouseleave", () => {
+//         s_box.style.opacity = "1";
+//     })
+// })
+
+const s_boxes = document.querySelectorAll(".sb1, .sb2, .sb3, .sb4, .sb5, .sb6, .sb7");
+const v_boxes = document.querySelectorAll(".sbh1, .sbh2, .sbh3, .sbh4, .sbh5, .sbh6, .sbh7");
+const ser_p = document.querySelectorAll(".p1, .p2, .p3, .p4, .p5, .p6, .p7");
+
+s_boxes.forEach((s_box, index) => {
+    s_box.addEventListener("mouseenter", () => {
+        s_boxes.forEach((box) => {
+            if (box !== s_box) {
+                box.style.opacity = "0.3";
+                v_boxes[index].style.visibility = "visible";
+                ser_p[index].style.visibility = "visible";
+
+            }
+        });
+    });
+
+    s_box.addEventListener("mouseleave", () => {
+        s_boxes.forEach((box) => {
+            box.style.opacity = "1";
+            v_boxes[index].style.visibility = "hidden";
+            ser_p[index].style.visibility = "hidden";
+        });
+    });
+});
