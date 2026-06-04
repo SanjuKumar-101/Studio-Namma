@@ -407,36 +407,7 @@ body {
   transition: all ease 0.5s;
   position: relative; /* Keep this so the video anchors to this box */
 }
-.sb8 {
-  display: flex;
-  justify-content: center; /* This centers the text inside the 1900px row */
-  align-items: center; /* This centers the text vertically */
-  width: 95%;
-  max-width: 1900px;
-  height: 150px;
-  /* background-color: red; */
-  font-stretch: expanded;
-  border-radius: 10px;
-  font-size: 4rem;
-  transition: all ease 0.5s;
-  position: relative; /* Keep this so the video anchors to this box */
-}
 
-.sb8p {
-  font-family: "GT Pressura Regular";
-  color: #bfbfbf;
-  font-size: 13px;
-  opacity: 1;
-  letter-spacing: 3px;
-  font-weight: 100;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: absolute;
-  visibility: visible !important;
-  cursor: pointer;
-  left: -500px;
-}
 .service-boxes p {
   font-family: "GT Pressura Regular";
   color: #bfbfbf;
@@ -465,6 +436,38 @@ body {
   overflow: hidden;
   /* transition: all ease 0.5s; */
 }
+.sb8 {
+  display: flex;
+  justify-content: center; /* This centers the text inside the 1900px row */
+  align-items: center; /* This centers the text vertically */
+  /* width: 95%; */
+  max-width: 1900px;
+  height: 150px;
+  /* background-color: red; */
+  /* font-stretch: expanded; */
+  /* border-radius: 10px; */
+  /* font-size: 4rem; */
+  /* transition: all ease 0.5s; */
+  /* position: relative; Keep this so the video anchors to this box */
+}
+
+.sb8p {
+  font-family: "GT Pressura Regular";
+  color: #bfbfbf;
+  font-size: 13px;
+  opacity: 1;
+  letter-spacing: 3px;
+  font-weight: 100;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: static;
+  margin: 0;
+  padding-left: 0;
+  transform: translateX(-130px);
+  visibility: visible !important;
+  cursor: pointer;
+}
 .headin {
   height: 100px;
   width: 1900px;
@@ -487,7 +490,7 @@ body {
 }
 
 .hero-six {
-  height: 40vh;
+  height: 20vh;
   width: 100%;
   /* background-color: red; */
   display: flex;
@@ -504,4 +507,66 @@ body {
   width: 100%;
   height: 100%;
   object-fit: contain;
+}
+
+.hero-seven {
+  height: 50vh;
+  width: 100%;
+  /* background-color: red; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #e3e3e3;
+  font-family: "Saira Extra Condensed", sans-serif;
+  font-weight: 900;
+  font-size: 115px;
+  line-height: 0.8;
+  text-align: center;
+}
+.left-box {
+  height: 100%;
+  width: 50%;
+  /* background-color: green; */
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding-left: 5px;
+}
+.left-box h1 {
+  color: #e3e3e3;
+  font-family: "Saira Extra Condensed", sans-serif;
+  font-weight: 900;
+  font-size: 180px;
+  line-height: 0.8;
+  text-align: center;
+}
+.photo-insert {
+  display: inline-block;
+  height: 120px;
+  width: 150px;
+  background-color: yellow;
+  background-image: url("https://cdn.prod.website-files.com/679cb9cacf00799ba4b4c985/68dce0426bc778f79210aebb_CTA-Team_Namma.webp");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  border-radius: 5px;
+  margin-left: 25px;
+}
+.right-box {
+  height: 50%;
+  width: 50%;
+  /* background-color: blue; */
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: column;
+  /* align-items: center; */
+  gap: 100px;
+}
+.right-box p{
+  color: #e3e3e3;
+  font-family: "Saira Extra Condensed", sans-serif;
+  font-weight: 900;
+  font-size: 30px;
+  line-height: 0.8;
+  text-align:left;
 }
