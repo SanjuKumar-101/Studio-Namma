@@ -1,3 +1,19 @@
+const introOverlay = document.querySelector(".intro-overlay");
+const introVideo = document.querySelector(".intro-video");
+
+if (introVideo) {
+  introVideo.addEventListener("ended", () => {
+    introOverlay.classList.add("fade-out");
+    setTimeout(() => introOverlay.classList.add("hidden"), 800);
+  });
+  setTimeout(() => {
+    if (!introOverlay.classList.contains("fade-out")) {
+      introOverlay.classList.add("fade-out");
+      setTimeout(() => introOverlay.classList.add("hidden"), 800);
+    }
+  }, 5000);
+}
+
 const revealObserver = new IntersectionObserver(
   (entries) => {
     entries.forEach((entry) => {
