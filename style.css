@@ -889,15 +889,15 @@ body {
 .footer_logo_stretch {
   position: absolute;
   inset: 0;
-  color: var(--accent);
-  opacity: 0.15;
+  color: #ffffff;
+  opacity: 0.2;
   pointer-events: none;
 }
 
 .footer_logo_stretch .logo-instance {
   height: 100%;
   width: 100%;
-  transform-origin: 50% 0%;
-  transform: scaleX(0);
+  transform-origin: center center;
+  transform: scaleX(0) scaleY(1);
   will-change: transform;
 }

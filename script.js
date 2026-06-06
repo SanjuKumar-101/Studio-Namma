@@ -280,8 +280,9 @@ if (logoSection && stretchLogo) {
           (windowHeight - sectionTop) / (windowHeight + sectionHeight),
         ),
       );
-      const scale = progress * 4;
-      stretchLogo.style.transform = "scaleX(" + scale + ")";
+      const scaleX = progress * 0.5;
+      const scaleY = 1 - progress * 0.7;
+      stretchLogo.style.transform = "scaleX(" + scaleX + ") scaleY(" + scaleY + ")";
       logRaf = null;
     });
   }
