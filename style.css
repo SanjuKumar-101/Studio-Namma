@@ -4,7 +4,9 @@
   box-sizing: border-box;
   transition: color 0.3s ease;
 }
-
+::-webkit-scrollbar {
+  display: none;
+}
 html,
 body {
   width: 100%;
@@ -211,7 +213,7 @@ body {
 
 .video-sec {
   height: 1150px;
-  width: 2100px;
+  width: 1885px;
 
   position: relative;
 
@@ -269,7 +271,42 @@ body {
   line-height: 0.8;
   text-align: center;
 }
+.home_intro_visuals {
+  display: none;
+}
 
+.intro-first,
+.intro-second {
+  cursor: pointer;
+}
+
+.popup-card {
+  position: fixed;
+  width: 140px;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 20px;
+  pointer-events: none;
+  z-index: 999;
+  animation: pop 1s ease forwards;
+}
+
+@keyframes pop {
+  0% {
+    opacity: 0;
+    transform: scale(0);
+  }
+
+  40% {
+    opacity: 1;
+    transform: scale(1.1) translateY(-20px);
+  }
+
+  100% {
+    opacity: 0;
+    transform: scale(0.8) translateY(-80px);
+  }
+}
 .hero-four {
   width: 100%;
   height: 250vh;
