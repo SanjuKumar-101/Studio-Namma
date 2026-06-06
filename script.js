@@ -244,25 +244,17 @@ s_boxes.forEach((s_box, index) => {
   });
 });
 
-const logoSection = document.querySelector(".footer-logo-section");
 const stretchLogo = document.querySelector(".footer_logo_stretch .logo-instance");
 
 function updateLogoStretch() {
-  if (!logoSection || !stretchLogo) return;
-  const rect = logoSection.getBoundingClientRect();
-  const sectionTop = rect.top;
-  const sectionHeight = rect.height;
-  const windowHeight = window.innerHeight;
-  const progress = Math.max(
-    0,
-    Math.min(
-      1,
-      (windowHeight - sectionTop) / (windowHeight + sectionHeight),
-    ),
-  );
-  const scaleX = progress * 0.5;
-  const scaleY = 1 - progress * 0.7;
+  if (!stretchLogo) return;
+  const scrollY = window.scrollY;
+  const maxScroll = document.documentElement.scrollHeight - window.innerHeight;
+  const progress = maxScroll > 0 ? Math.min(scrollY / maxScroll, 1) : 0;
+  const scaleX = 1 + progress * 0.5;
+  const scaleY = 1 - progress * 0.5;
   stretchLogo.style.transform = "scaleX(" + scaleX + ") scaleY(" + scaleY + ")";
+  stretchLogo.style.opacity = progress * 0.4;
 }
 
 let logoTicking = false;

@@ -865,39 +865,46 @@ body {
 .footer-logo-section {
   width: 100%;
   overflow: hidden;
-  padding: 60px 0;
+  padding: 120px 0;
+  background: var(--background-primary);
 }
 
 .footer_logo_wrapper {
   position: relative;
-  width: 100%;
-  height: 250px;
+  width: 80%;
+  max-width: 1200px;
+  height: 280px;
+  margin: 0 auto;
 }
 
 .footer_logo_fill {
   position: absolute;
   inset: 0;
   color: var(--text-secondary);
-  opacity: 1;
+  opacity: 0.5;
 }
 
 .footer_logo_fill .logo-instance {
-  height: 100%;
-  width: 100%;
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .footer_logo_stretch {
   position: absolute;
   inset: 0;
   color: #ffffff;
-  opacity: 0.35;
   pointer-events: none;
 }
 
 .footer_logo_stretch .logo-instance {
-  height: 100%;
-  width: 100%;
-  transform-origin: center center;
-  transform: scaleX(0) scaleY(1);
-  will-change: transform;
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform-origin: 50% 50%;
+  will-change: transform, opacity;
 }
