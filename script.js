@@ -1,3 +1,32 @@
+const revealObserver = new IntersectionObserver(
+  (entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("revealed");
+        revealObserver.unobserve(entry.target);
+      }
+    });
+  },
+  { threshold: 0.1, rootMargin: "0px 0px -50px 0px" },
+);
+
+document
+  .querySelectorAll("[data-reveal], [data-reveal-stagger]")
+  .forEach((el) => revealObserver.observe(el));
+
+const themeToggle = document.querySelector(".left-menu p:nth-child(2)");
+
+themeToggle.addEventListener("click", () => {
+  const html = document.documentElement;
+  if (html.getAttribute("data-theme") === "light") {
+    html.removeAttribute("data-theme");
+    themeToggle.textContent = "LIGHT MODE";
+  } else {
+    html.setAttribute("data-theme", "light");
+    themeToggle.textContent = "DARK MODE";
+  }
+});
+
 let over_menu = document.querySelector(".menu-overlay");
 let hero = document.querySelector(".hero-one");
 let menu_p = document.querySelector(".menu-p");
@@ -104,7 +133,7 @@ animate();
 
 const boxes = document.querySelectorAll(".boxes");
 
-boxes.forEach((box) => {
+boxes.forEach((box, index) => {
   const image = box.querySelector("img");
 
   box.addEventListener("mouseenter", () => {
@@ -115,10 +144,8 @@ boxes.forEach((box) => {
     ball.style.height = "50px";
     ball.style.borderRadius = "10px";
     ball.style.position = "fixed";
-    ball.style.transform = "rotate(-20deg)";
+    ball.style.transform = "translate(-50%, -50%) rotate(-20deg)";
     ball.style.color = "white";
-    h_boxes.style.visibility = "visible";
-    // h_boxes.style.height = "500px";
   });
 
   box.addEventListener("mouseleave", () => {
@@ -128,9 +155,8 @@ boxes.forEach((box) => {
     ball.style.width = "40px";
     ball.style.height = "40px";
     ball.style.borderRadius = "50%";
-    ball.style.transform = "translateX(0px)";
-    ball.style.color = "#4361ee";
-    h_boxes.style.visibility = "hidden";
+    ball.style.transform = "translate(-50%, -50%)";
+    ball.style.color = "";
   });
 });
 
@@ -187,17 +213,17 @@ s_boxes.forEach((s_box, index) => {
     s_boxes.forEach((box) => {
       if (box !== s_box) {
         box.style.opacity = "0.3";
-        v_boxes[index].style.visibility = "visible";
-        ser_p[index].style.visibility = "visible";
       }
     });
+    v_boxes[index].classList.add("active");
+    ser_p[index].classList.add("active");
   });
 
   s_box.addEventListener("mouseleave", () => {
     s_boxes.forEach((box) => {
       box.style.opacity = "1";
-      v_boxes[index].style.visibility = "hidden";
-      ser_p[index].style.visibility = "hidden";
     });
+    v_boxes[index].classList.remove("active");
+    ser_p[index].classList.remove("active");
   });
 });

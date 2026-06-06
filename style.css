@@ -7,12 +7,39 @@
 ::-webkit-scrollbar {
   display: none;
 }
+
+:root {
+  --bg: #111111;
+  --bg-secondary: #1c1c1c;
+  --bg-video: #000;
+  --text-primary: #e3e3e3;
+  --text-secondary: #bfbfbf;
+  --accent: #3866ff;
+  --accent-hover: #ff3333;
+  --ball-bg: #4361ee;
+  --ball-text: #4361ee;
+  --photo-bg: yellow;
+}
+
+[data-theme="light"] {
+  --bg: #f5f5f5;
+  --bg-secondary: #e0e0e0;
+  --bg-video: #e0e0e0;
+  --text-primary: #1a1a1a;
+  --text-secondary: #666666;
+  --accent: #3866ff;
+  --accent-hover: #ff3333;
+  --ball-bg: #4361ee;
+  --ball-text: #4361ee;
+  --photo-bg: #ffd700;
+}
 html,
 body {
   width: 100%;
   height: 100%;
-  background-color: #111111;
+  background-color: var(--bg);
   overflow-x: hidden;
+  scroll-behavior: smooth;
 }
 
 .bar {
@@ -22,12 +49,12 @@ body {
   top: 0;
   left: 0;
   z-index: 1000;
-  /* background-color: red; */
+  /* background-color: var(--accent-hover); */
   display: flex;
   align-items: center;
   justify-content: space-between;
   font-family: "GT Pressura Regular";
-  color: #bfbfbf;
+  color: var(--text-secondary);
   font-size: 13px;
   opacity: 1;
   letter-spacing: 3px;
@@ -58,11 +85,11 @@ body {
 .hero-one {
   height: 110vh;
   width: 100%;
-  /* background-color: red; */
+  /* background-color: var(--accent-hover); */
   display: flex;
   justify-content: center;
   align-items: center;
-  color: #e3e3e3;
+  color: var(--text-primary);
   font-family: "Saira Extra Condensed", sans-serif;
   font-weight: 900;
   font-size: 115px;
@@ -73,7 +100,7 @@ body {
 .circle {
   width: 70px;
   height: 70px;
-  background: #3866ff;
+  background: var(--accent);
 
   border-radius: 50%;
 
@@ -104,7 +131,7 @@ body {
   width: 220%;
   height: 205%;
 
-  background: #1c1c1c;
+  background: var(--bg-secondary);
 
   z-index: 999;
 
@@ -125,7 +152,7 @@ body {
   font-weight: 900;
   font-size: 80px;
   line-height: 0.8;
-  color: #e3e3e3;
+  color: var(--text-primary);
 }
 .menu-option-box-2 {
   height: 500px;
@@ -139,7 +166,7 @@ body {
   font-weight: 900;
   font-size: 80px;
   line-height: 0.8;
-  color: #e3e3e3;
+  color: var(--text-primary);
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
@@ -174,7 +201,7 @@ body {
   width: 40px;
   height: 40px;
 
-  background: #4361ee;
+  background: var(--ball-bg);
 
   border-radius: 50%;
 
@@ -190,8 +217,7 @@ body {
   transform: translate(-50%, -50%);
   transition: all ease 0.1s;
   overflow: hidden;
-  transform: translateY(105%);
-  color: #4361ee;
+  color: var(--ball-text);
   font-family: "Saira Extra Condensed", sans-serif;
   font-weight: 900;
   font-size: 30px;
@@ -221,7 +247,7 @@ body {
 
   border-radius: 10px;
 
-  background: #000;
+  background: var(--bg-video);
 }
 
 .video-sec iframe {
@@ -245,17 +271,17 @@ body {
 .hero-three {
   height: 100vh;
   width: 100%;
-  /* background-color: red; */
+  /* background-color: var(--accent-hover); */
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  color: #e3e3e3;
+  color: var(--text-primary);
 }
 
 .hero-three p {
   font-family: "GT Pressura Regular";
-  color: #bfbfbf;
+  color: var(--text-secondary);
   font-size: 13px;
   opacity: 1;
   letter-spacing: 3px;
@@ -264,7 +290,7 @@ body {
 }
 
 .hero-three h1 {
-  color: #e3e3e3;
+  color: var(--text-primary);
   font-family: "Saira Extra Condensed", sans-serif;
   font-weight: 900;
   font-size: 115px;
@@ -310,7 +336,7 @@ body {
 .hero-four {
   width: 100%;
   height: 250vh;
-  /* background-color: red; */
+  /* background-color: var(--accent-hover); */
   /* display: flex;
     justify-content: center;
     align-items: center; */
@@ -318,7 +344,7 @@ body {
 
 .hero-four p {
   font-family: "GT Pressura Regular";
-  color: #bfbfbf;
+  color: var(--text-secondary);
   font-size: 13px;
   opacity: 1;
   letter-spacing: 3px;
@@ -332,7 +358,7 @@ body {
 }
 
 .hero-four h1 {
-  color: #e3e3e3;
+  color: var(--text-primary);
   font-family: "Saira Extra Condensed", sans-serif;
   font-weight: 900;
   font-size: 180px;
@@ -362,7 +388,7 @@ body {
   border-radius: 10px;
   overflow: hidden;
   transition: 0.4s ease;
-  /* background-color: red; */
+  /* background-color: var(--accent-hover); */
   display: flex;
   justify-content: center;
   align-items: center;
@@ -374,12 +400,11 @@ body {
   z-index: 999;
   height: 388px;
   width: 690px;
-  background-color: blue;
+  background-color: var(--accent);
   border-radius: 10px;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  visibility: hidden;
   visibility: hidden;
   opacity: 0;
   transition: opacity 0.3s ease;
@@ -398,29 +423,29 @@ body {
 }
 
 .intro-first {
-  color: #3866ff;
+  color: var(--accent);
 }
 
 .intro-first:hover {
-  color: red;
+  color: var(--accent-hover);
 }
 
 .intro-second {
-  color: blue;
+  color: var(--accent);
 }
 
 .intro-second:hover {
-  color: red;
+  color: var(--accent-hover);
 }
 
 .hero-five {
   height: 140vh;
   width: 100%;
-  /* background-color: red; */
+  /* background-color: var(--accent-hover); */
   display: flex;
   justify-content: center;
   align-items: center;
-  color: #e3e3e3;
+  color: var(--text-primary);
   font-family: "Saira Extra Condensed", sans-serif;
   font-weight: 800;
   /* font-size: 8rem; */
@@ -447,9 +472,9 @@ body {
 
 .service-boxes p {
   font-family: "GT Pressura Regular";
-  color: #bfbfbf;
+  color: var(--text-secondary);
   font-size: 13px;
-  opacity: 1;
+  opacity: 0;
   letter-spacing: 3px;
   font-weight: 100;
   padding-left: 10px;
@@ -459,19 +484,33 @@ body {
   position: relative;
   visibility: hidden;
   left: 5%;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.service-boxes p.active {
+  opacity: 1;
+  visibility: visible;
 }
 .service-boxe-hover {
   position: absolute;
   height: 350px;
   width: 400px;
-  left: 20px; /* Locks it to the absolute left edge */
-  top: 50%; /* Centers the video vertically */
-  transform: translateY(-50%);
-  visibility: hidden;
-  border-radius: 5%; /* Use 50% for a perfect responsive circle */
-  object-fit: cover; /* Forces the widescreen video to fill the 100x100 square without stretching */
+  left: 20px;
+  top: 50%;
+  transform: translateY(-50%) scaleX(0);
+  transform-origin: center center;
+  opacity: 0;
+  pointer-events: none;
+  border-radius: 10px;
+  object-fit: cover;
   overflow: hidden;
-  /* transition: all ease 0.5s; */
+  transition: transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+    opacity 0.4s ease;
+}
+
+.service-boxe-hover.active {
+  transform: translateY(-50%) scaleX(1);
+  opacity: 1;
 }
 .sb8 {
   display: flex;
@@ -480,7 +519,7 @@ body {
   /* width: 95%; */
   max-width: 1900px;
   height: 150px;
-  /* background-color: red; */
+  /* background-color: var(--accent-hover); */
   /* font-stretch: expanded; */
   /* border-radius: 10px; */
   /* font-size: 4rem; */
@@ -490,7 +529,7 @@ body {
 
 .sb8p {
   font-family: "GT Pressura Regular";
-  color: #bfbfbf;
+  color: var(--text-secondary);
   font-size: 13px;
   opacity: 1;
   letter-spacing: 3px;
@@ -508,12 +547,12 @@ body {
 .headin {
   height: 100px;
   width: 1900px;
-  /* background-color: blue; */
+  /* background-color: var(--accent); */
   /* position: relative; */
 }
 .headin p {
   font-family: "GT Pressura Regular";
-  color: #bfbfbf;
+  color: var(--text-secondary);
   font-size: 13px;
   opacity: 1;
   letter-spacing: 3px;
@@ -529,11 +568,11 @@ body {
 .hero-six {
   height: 20vh;
   width: 100%;
-  /* background-color: red; */
+  /* background-color: var(--accent-hover); */
   display: flex;
   justify-content: center;
   align-items: center;
-  color: #e3e3e3;
+  color: var(--text-primary);
   font-family: "Saira Extra Condensed", sans-serif;
   font-weight: 900;
   font-size: 115px;
@@ -549,11 +588,11 @@ body {
 .hero-seven {
   height: 50vh;
   width: 100%;
-  /* background-color: blue; */
+  /* background-color: var(--accent); */
   display: flex;
   justify-content: center;
   align-items: center;
-  color: #e3e3e3;
+  color: var(--text-primary);
   font-family: "Saira Extra Condensed", sans-serif;
   font-weight: 900;
   font-size: 115px;
@@ -570,7 +609,7 @@ body {
   padding-left: 5px;
 }
 .left-box h1 {
-  color: #e3e3e3;
+  color: var(--text-primary);
   font-family: "Saira Extra Condensed", sans-serif;
   font-weight: 900;
   font-size: 180px;
@@ -581,7 +620,7 @@ body {
   display: inline-block;
   height: 120px;
   width: 150px;
-  background-color: yellow;
+  background-color: var(--photo-bg);
   background-image: url("https://cdn.prod.website-files.com/679cb9cacf00799ba4b4c985/68dce0426bc778f79210aebb_CTA-Team_Namma.webp");
   background-size: cover;
   background-position: center;
@@ -592,7 +631,7 @@ body {
 .right-box {
   height: 50%;
   width: 50%;
-  /* background-color: blue; */
+  /* background-color: var(--accent); */
   display: flex;
   justify-content: flex-start;
   flex-direction: column;
@@ -600,7 +639,7 @@ body {
   gap: 100px;
 }
 .right-box p {
-  color: #e3e3e3;
+  color: var(--text-primary);
   font-family: "Saira Extra Condensed", sans-serif;
   font-weight: 900;
   font-size: 30px;
@@ -611,12 +650,12 @@ body {
 .hero-eight {
   height: 60vh;
   width: 100%;
-  /* background-color: red; */
+  /* background-color: var(--accent-hover); */
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  color: #e3e3e3;
+  color: var(--text-primary);
   font-family: "Saira Extra Condensed", sans-serif;
   font-weight: 900;
   font-size: 115px;
@@ -636,7 +675,7 @@ body {
 .child-boxes {
   height: 170px;
   width: 300px;
-  /* background-color: blue; */
+  /* background-color: var(--accent); */
   border-radius: 10px;
 }
 .child-boxes video {
@@ -666,7 +705,7 @@ body {
 }
 .bottom-box .left-box p {
   font-family: "GT Pressura Regular";
-  color: #bfbfbf;
+  color: var(--text-secondary);
   font-size: 15px;
   opacity: 1;
   letter-spacing: 3px;
@@ -680,7 +719,7 @@ body {
 .bottom-box .right-box {
   height: 100%;
   width: 60%;
-  /* background-color: blue; */
+  /* background-color: var(--accent); */
   display: flex;
   justify-content: center;
   align-items: flex-start;
@@ -690,7 +729,7 @@ body {
 }
 .bottom-box .right-box p {
   font-family: "GT Pressura Regular";
-  color: #bfbfbf;
+  color: var(--text-secondary);
   font-size: 15px;
   opacity: 1;
   letter-spacing: 3px;
@@ -700,4 +739,99 @@ body {
   margin: 0;
   line-height: 18px;
   text-align: left;
+}
+
+[data-reveal] {
+  opacity: 0;
+  transform: translateY(60px);
+  transition: opacity 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+    transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+[data-reveal].revealed {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+[data-reveal="left"] {
+  transform: translateX(-80px);
+}
+
+[data-reveal="left"].revealed {
+  transform: translateX(0);
+}
+
+[data-reveal="right"] {
+  transform: translateX(80px);
+}
+
+[data-reveal="right"].revealed {
+  transform: translateX(0);
+}
+
+[data-reveal="scale"] {
+  transform: scale(0.8);
+}
+
+[data-reveal="scale"].revealed {
+  transform: scale(1);
+}
+
+[data-reveal-stagger] > * {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+    transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+[data-reveal-stagger].revealed > * {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+[data-reveal-stagger] > *:nth-child(1) {
+  transition-delay: 0s;
+}
+[data-reveal-stagger] > *:nth-child(2) {
+  transition-delay: 0.08s;
+}
+[data-reveal-stagger] > *:nth-child(3) {
+  transition-delay: 0.16s;
+}
+[data-reveal-stagger] > *:nth-child(4) {
+  transition-delay: 0.24s;
+}
+[data-reveal-stagger] > *:nth-child(5) {
+  transition-delay: 0.32s;
+}
+[data-reveal-stagger] > *:nth-child(6) {
+  transition-delay: 0.4s;
+}
+[data-reveal-stagger] > *:nth-child(7) {
+  transition-delay: 0.48s;
+}
+
+.hero-five [data-reveal]:nth-child(2) {
+  transition-delay: 0s;
+}
+.hero-five [data-reveal]:nth-child(3) {
+  transition-delay: 0.05s;
+}
+.hero-five [data-reveal]:nth-child(4) {
+  transition-delay: 0.1s;
+}
+.hero-five [data-reveal]:nth-child(5) {
+  transition-delay: 0.15s;
+}
+.hero-five [data-reveal]:nth-child(6) {
+  transition-delay: 0.2s;
+}
+.hero-five [data-reveal]:nth-child(7) {
+  transition-delay: 0.25s;
+}
+.hero-five [data-reveal]:nth-child(8) {
+  transition-delay: 0.3s;
+}
+.hero-five [data-reveal]:nth-child(9) {
+  transition-delay: 0.35s;
 }
