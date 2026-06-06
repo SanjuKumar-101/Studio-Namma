@@ -865,13 +865,13 @@ body {
 .footer-logo-section {
   width: 100%;
   overflow: hidden;
-  padding: 40px 0;
+  padding: 60px 0;
 }
 
 .footer_logo_wrapper {
   position: relative;
   width: 100%;
-  height: 120px;
+  height: 250px;
 }
 
 .footer_logo_fill {
@@ -890,7 +890,7 @@ body {
   position: absolute;
   inset: 0;
   color: #ffffff;
-  opacity: 0.2;
+  opacity: 0.35;
   pointer-events: none;
 }
 

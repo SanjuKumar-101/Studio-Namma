@@ -247,43 +247,32 @@ s_boxes.forEach((s_box, index) => {
 const logoSection = document.querySelector(".footer-logo-section");
 const stretchLogo = document.querySelector(".footer_logo_stretch .logo-instance");
 
-if (logoSection && stretchLogo) {
-  const logoObserver = new IntersectionObserver(
-    (entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          document.addEventListener("scroll", onLogScroll);
-          onLogScroll();
-        } else {
-          document.removeEventListener("scroll", onLogScroll);
-        }
-      });
-    },
-    { threshold: [0, 0.1, 0.5, 1] },
+function updateLogoStretch() {
+  if (!logoSection || !stretchLogo) return;
+  const rect = logoSection.getBoundingClientRect();
+  const sectionTop = rect.top;
+  const sectionHeight = rect.height;
+  const windowHeight = window.innerHeight;
+  const progress = Math.max(
+    0,
+    Math.min(
+      1,
+      (windowHeight - sectionTop) / (windowHeight + sectionHeight),
+    ),
   );
-
-  logoObserver.observe(logoSection);
-
-  let logRaf = null;
-
-  function onLogScroll() {
-    if (logRaf) return;
-    logRaf = requestAnimationFrame(() => {
-      const rect = logoSection.getBoundingClientRect();
-      const sectionTop = rect.top;
-      const sectionHeight = rect.height;
-      const windowHeight = window.innerHeight;
-      const progress = Math.max(
-        0,
-        Math.min(
-          1,
-          (windowHeight - sectionTop) / (windowHeight + sectionHeight),
-        ),
-      );
-      const scaleX = progress * 0.5;
-      const scaleY = 1 - progress * 0.7;
-      stretchLogo.style.transform = "scaleX(" + scaleX + ") scaleY(" + scaleY + ")";
-      logRaf = null;
-    });
-  }
+  const scaleX = progress * 0.5;
+  const scaleY = 1 - progress * 0.7;
+  stretchLogo.style.transform = "scaleX(" + scaleX + ") scaleY(" + scaleY + ")";
 }
+
+let logoTicking = false;
+document.addEventListener("scroll", () => {
+  if (!logoTicking) {
+    requestAnimationFrame(() => {
+      updateLogoStretch();
+      logoTicking = false;
+    });
+    logoTicking = true;
+  }
+});
+updateLogoStretch();
