@@ -861,3 +861,43 @@ body {
 .intro-overlay.hidden {
   display: none;
 }
+
+.footer-logo-section {
+  width: 100%;
+  overflow: hidden;
+  padding: 40px 0;
+}
+
+.footer_logo_wrapper {
+  position: relative;
+  width: 100%;
+  height: 120px;
+}
+
+.footer_logo_fill {
+  position: absolute;
+  inset: 0;
+  color: var(--text-secondary);
+  opacity: 1;
+}
+
+.footer_logo_fill .logo-instance {
+  height: 100%;
+  width: 100%;
+}
+
+.footer_logo_stretch {
+  position: absolute;
+  inset: 0;
+  color: var(--accent);
+  opacity: 0.15;
+  pointer-events: none;
+}
+
+.footer_logo_stretch .logo-instance {
+  height: 100%;
+  width: 100%;
+  transform-origin: 50% 0%;
+  transform: scaleX(0);
+  will-change: transform;
+}

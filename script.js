@@ -243,3 +243,46 @@ s_boxes.forEach((s_box, index) => {
     ser_p[index].classList.remove("active");
   });
 });
+
+const logoSection = document.querySelector(".footer-logo-section");
+const stretchLogo = document.querySelector(".footer_logo_stretch .logo-instance");
+
+if (logoSection && stretchLogo) {
+  const logoObserver = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          document.addEventListener("scroll", onLogScroll);
+          onLogScroll();
+        } else {
+          document.removeEventListener("scroll", onLogScroll);
+        }
+      });
+    },
+    { threshold: [0, 0.1, 0.5, 1] },
+  );
+
+  logoObserver.observe(logoSection);
+
+  let logRaf = null;
+
+  function onLogScroll() {
+    if (logRaf) return;
+    logRaf = requestAnimationFrame(() => {
+      const rect = logoSection.getBoundingClientRect();
+      const sectionTop = rect.top;
+      const sectionHeight = rect.height;
+      const windowHeight = window.innerHeight;
+      const progress = Math.max(
+        0,
+        Math.min(
+          1,
+          (windowHeight - sectionTop) / (windowHeight + sectionHeight),
+        ),
+      );
+      const scale = progress * 4;
+      stretchLogo.style.transform = "scaleX(" + scale + ")";
+      logRaf = null;
+    });
+  }
+}
